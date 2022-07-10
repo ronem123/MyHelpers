@@ -1,0 +1,61 @@
+#########################################
+################# AUTHOR ################
+#########################################
+
+# RAM MANDAL
+# ram.cp18113@gmai.com
+# https://www.linkedin.com/in/ram-mandal-90470b88/
+
+
+/**
+** These file contains plugin, techniques and process of styling and adding different fonts to customize your 
+** Terminal for Mac
+**/
+
+Step 1: Install Homebrew
+Run: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+Step 2: Install git
+Run: brew install git
+
+Step 3: Install oh-my-zsh
+Run: sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+Step 4: Install iTerm2 (successor of the default terminal)
+Run: brew install --cask iterm2
+
+Step 5: Install some fonts which contains icons which will make our terminal looks more eye catchy
+Download & Install: https://github.com/Falkor/dotfiles/blob/master/fonts/SourceCodePro%2BPowerline%2BAwesome%2BRegular.ttf
+
+Step 6: Install powerlevel10k
+Run: git clone https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
+
+Set theme on .zshrc: ZSH_THEME="powerlevel10k/powerlevel10k"
+
+We are preety much done with the default terminal, Now launch iTerm from the spotlight search window
+
+
+Launch iTerm2 and Go to the preference and customize the default profile or create your own profile and customize the color theme
+Optional: Download the ram-profile.itemcolors color theme and set it as yours
+locate : https://github.com/ronem123/MyHelpers/tree/master/GitHelper/ram-profile.itemcolors
+
+Step 7: Configure Power Level 10K
+Re-launch iTerm and follow prompts
+
+if You have already configured powerlevel10k and want to reconfigure it
+Run: p10k configure
+
+Step 8: Configure Terminal font for Vs Code
+Update terminal.integrated.fontFamily setting to 'SourceCodePro+PowerLine+AwesomeRegular'
+
+Step 9: Enable suggestions in terminal 
+Clone: git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+
+Add plugin to .zshrc file: plugins=(zsh-autosuggestions)
+
+Step 10: Enable quake-style terminal
+Open iterm2 preferences > keys, then configure hotkey to Ctrl + ~ to Show/Hide all windows with a system-wide hotkey
+Open iterm2 preferences > profile > window, set space to all spaces and check hide after opening
+Open system preferences > users & groups > login items, then add iterm. Check hide.
+
+Note: .zprofile is loaded first and then .zshrc will get loaded
