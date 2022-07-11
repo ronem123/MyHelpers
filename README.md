@@ -1,2 +1,4 @@
 # MyHelpers
-Get all the helpful methods and tricks related to Git and T
+Style and theme your Terminal and iterm2
+
+
