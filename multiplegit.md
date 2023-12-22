@@ -38,13 +38,13 @@ This will create public/private key pairs for each of these accounts. They shoul
       IdentityFile ~/.ssh/id_rsa_personal        # Private key for personal account
     
     #Github for company
-    Host github.com-vanilla                       # Notice the host for company 
+    Host github.com-vanilla                      # Notice the host for the company 
       HostName github.com
       User git
-      IdentityFile ~/.ssh/id_rsa_work            # Private key for work account
+      IdentityFile ~/.ssh/id_rsa_vanilla          # Private key for work account
     
     Host *
-       AddKeysToAgent yes                        # Load the keys from keychain into ssh-agent automatically
+       AddKeysToAgent yes                        # Load the keys from the keychain into ssh-agent automatically
        IdentitiesOnly yes                        # Tells the ssh-agent server to use the IdentityFiles specified above for each host
        
 <img src="https://github.com/ronem123/MyHelpers/blob/master/Resources/ssh-config.png"/>
