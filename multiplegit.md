@@ -61,7 +61,7 @@ This will create public/private key pairs for each of these accounts. They shoul
 
 ### 8. You can Test the connection 
         ssh -T git@github.com-personal
-        ssh -T git@github.com-personal
+        ssh -T git@github.com-vanilla
 
 If you followed everything to this point, this should return
 
