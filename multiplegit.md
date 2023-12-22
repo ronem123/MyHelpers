@@ -37,8 +37,8 @@ This will create public/private key pairs for each of these accounts. They shoul
       User git
       IdentityFile ~/.ssh/id_rsa_personal        # Private key for personal account
     
-    #Github for work
-    Host github.com-work                         # Notice the host for work 
+    #Github for company
+    Host github.com-vanilla                       # Notice the host for company 
       HostName github.com
       User git
       IdentityFile ~/.ssh/id_rsa_work            # Private key for work account
