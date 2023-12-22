@@ -17,6 +17,8 @@ This will create public/private key pairs for each of these accounts. They shoul
     ~/.ssh/id_rsa_vanilla
     ~/.ssh/id_rsa_vanilla.pub
 
+<img src="https://github.com/ronem123/MyHelpers/blob/master/Resources/private-public-ssh.png"/>
+
 ### 2. Once the keys are generated run this command
 
     eval "$(ssh-agent -s)"
@@ -45,32 +47,27 @@ This will create public/private key pairs for each of these accounts. They shoul
        AddKeysToAgent yes                        # Load the keys from keychain into ssh-agent automatically
        IdentitiesOnly yes                        # Tells the ssh-agent server to use the IdentityFiles specified above for each host
        
+<img src="https://github.com/ronem123/MyHelpers/blob/master/Resources/ssh-config.png"/>
+
 ### 5. Save config.
 
 ### 6. Add keys to macOS Keychain(run the below command)
-ssh-add -D           # Will delete all identities added previously from the ssh agent
-ssh-add --apple-use-keychain ~/.ssh/id_ed25519_personal
-ssh-add --apple-use-keychain ~/.ssh/id_ed25519_work
 
-Add public keys to your corresponding accounts(personal or office accounts).
+        ssh-add -D           # Will delete all identities added previously from the ssh-agent
+        ssh-add --apple-use-keychain ~/.ssh/id_rsa_personal
+        ssh-add --apple-use-keychain ~/.ssh/id_rsa_vanilla
 
-You can Test the connection 
-ssh -T git@github.com
-ssh -T git@github.com-work
+### 7. Add public keys to your corresponding git accounts(personal or office accounts).
+
+### 8. You can Test the connection 
+        ssh -T git@github.com-personal
+        ssh -T git@github.com-personal
 
 If you followed everything to this point, this should return
-Hi USERNAME! You've successfully authenticated, but GitHub does not provide shell access.
 
-Finally, If you already have cloned repository of gitlab, you can update the remote url as below
-git remote set-url origin git@github.com-work:company/project.git
+        Hi USERNAME! You've successfully authenticated, but GitHub does not provide shell access.
 
------------------------- my config file--------------
-#[Github]
-Host github.com-vanilla
-   HostName github.com
-   User git
-   AddKeysToAgent yes
-   IdentitiesOnly yes
-   IdentityFile ~/.ssh/id_rsa_vanilla
+### 9. Finally, If you already have a cloned repository of GitLab projects, you can update the remote URL below
 
-example : git remote set-url origin git@github.com-vanilla:Vanilla-Tech/eremit-singapore--mobile-android.git
+        git remote set-url origin git@github.com-work:company/project.git
+        example : git remote set-url origin git@github.com-vanilla:Vanilla-Tech/eremit-singapore--mobile-android.git
